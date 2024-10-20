@@ -3,7 +3,8 @@ if [ -z "$PYFILE" ]; then
     echo "Error: PYFILE environment variable is not set."
     exit 1
 fi
+echo "Compiling $PYFILE ..."
 python -m py_compile "$PYFILE"
 compiled_file="${PYFILE}c"
-mv "${PYFILE}c" "$compiled_file"
+mv "__pycache__/${PYFILE%.py}.cpython-*.pyc" "$compiled_file"
 echo "Compiled file: $compiled_file"
