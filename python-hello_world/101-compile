@@ -1,0 +1,5 @@
+#!/bin/bash
+python -m py_compile "$PYFILE"
+compiled_file="${PYFILE}c"
+mv "${PYFILE}c" "$compiled_file"
+echo "Compiled file: $compiled_file"
